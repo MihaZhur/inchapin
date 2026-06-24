@@ -1,0 +1,13 @@
+@use '@/shared/styles/breakpoints' as *;
+
+.container {
+    width: 100%;
+    // max-width: 1200px;
+    margin: 0 auto;
+
+    @include bp('mobile')   { padding: 0 20px; }
+    @include bp('tablet')   { padding: 0 40px; }
+    @include bp('notebook') { padding: 0 30px; }
+    @include bp('desktop')  { padding: 0 40px; }
+    @include bp('wide')     { padding: 0 80px; }
+}

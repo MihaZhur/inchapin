@@ -1,0 +1,26 @@
+$breakpoints: (
+  'mobile':   (0, 767px),
+  'tablet':   (768px, 1023px),
+  'notebook': (1024px, 1280px),
+  'desktop':  (1281px, 1769px),
+  'wide':     (1770px, null),
+);
+
+@mixin bp($name) {
+  $range: map-get($breakpoints, $name);
+
+  @if $range == null {
+    @warn "Unknown breakpoint: `#{$name}`. Available: #{map-keys($breakpoints)}";
+  } @else {
+    $min: nth($range, 1);
+    $max: nth($range, 2);
+
+    @if $min == 0 and $max != null {
+      @media (max-width: $max) { @content; }
+    } @else if $max == null {
+      @media (min-width: $min) { @content; }
+    } @else {
+      @media (min-width: $min) and (max-width: $max) { @content; }
+    }
+  }
+}
