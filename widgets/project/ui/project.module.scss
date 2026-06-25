@@ -1,0 +1,378 @@
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/breakpoints' as *;
+.project {
+  padding-top: 110px;
+  padding-bottom: 40px;
+}
+.project__container {
+  display: flex;
+  gap: 226px;
+  @include bp('wide') {
+    gap: 293px;
+  }
+  @include bp('notebook') {
+    gap: 148px;
+  }
+  @include bp('tablet') {
+    gap: 94px;
+  }
+  @include bp('mobile') {
+    gap: 56px;
+    flex-direction: column;
+  }
+}
+.project__title {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: $color-primary;
+  margin-bottom: 27px;
+  text-align: right;
+  @include bp('wide') {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+  @include bp('notebook') {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  @include bp('tablet') {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  @include bp('mobile') {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+}
+.project__blockImage {
+  max-width: 567px;
+  position: relative;
+  width: 100%;
+  @include bp('wide') {
+    font-size: 17px;
+    max-width: 733px;
+  }
+  @include bp('notebook') {
+    font-size: 11px;
+    max-width: 408px;
+  }
+  @include bp('tablet') {
+    font-size: 11px;
+    max-width: 290px;
+  }
+  @include bp('mobile') {
+    font-size: 11px;
+  }
+}
+
+.project__info {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  padding-top: 104px;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 49px;
+    height: 9px;
+    background-color: $color-primary;
+    display: block;
+    margin-bottom: 50px;
+  }
+  @include bp('wide') {
+    &::before {
+      width: 63px;
+    }
+    padding-top: 130px;
+  }
+  @include bp('notebook') {
+    &::before {
+      width: 35px;
+      height: 6px;
+    }
+    padding-top: 70px;
+  }
+  @include bp('tablet') {
+    &::before {
+      width: 35px;
+      height: 6px;
+    }
+    padding-top: 40px;
+  }
+  @include bp('mobile') {
+    &::before {
+      width: 35px;
+      height: 6px;
+    }
+    padding-top: 56px;
+  }
+}
+.project__infoMarker {
+  color: $color-primary;
+}
+
+.project__infoTitle {
+  font-size: 26px;
+  line-height: 140%;
+  letter-spacing: 0;
+  margin-bottom: 100px;
+  max-width: 453px;
+  @include bp('wide') {
+    font-size: 34px;
+    margin-bottom: 120px;
+    max-width: 587px;
+  }
+  @include bp('notebook') {
+    font-size: 19px;
+    margin-bottom: 65px;
+    max-width: 334px;
+  }
+  @include bp('tablet') {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+  @include bp('mobile') {
+    font-size: 16px;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+}
+.project__infoText {
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0;
+  max-width: 453px;
+  @include bp('wide') {
+    font-size: 20px;
+    max-width: 587px;
+  }
+  @include bp('notebook') {
+    font-size: 12px;
+    max-width: 334px;
+  }
+  @include bp('tablet') {
+    font-size: 12px;
+  }
+  @include bp('mobile') {
+    font-size: 11px;
+    max-width: 100%;
+  }
+}
+
+.project__icon {
+  width: 49px;
+  height: 68px;
+  @include bp('wide') {
+    width: 63px;
+    height: 88px;
+  }
+  @include bp('notebook') {
+    width: 35px;
+    height: 49px;
+  }
+  @include bp('tablet') {
+    width: 20px;
+    height: 27px;
+  }
+  @include bp('mobile') {
+    width: 20px;
+    height: 27px;
+  }
+}
+.project__buttonTop {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 115px;
+  right: -100px;
+  padding: 0;
+  border-radius: 100%;
+  @include bp('wide') {
+    width: 259px;
+    height: 259px;
+    right: -130px;
+  }
+  @include bp('notebook') {
+    width: 148px;
+    height: 148px;
+    right: -74px;
+  }
+  @include bp('tablet') {
+    width: 81px;
+    height: 81px;
+    right: -40px;
+  }
+  @include bp('mobile') {
+    width: 87px;
+    height: 87px;
+    right: -44px;
+  }
+}
+.project__videoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 96px;
+  gap: 15px;
+  @include bp('wide') {
+    gap: 20px;
+  }
+  @include bp('notebook') {
+    gap: 20px;
+  }
+  @include bp('tablet') {
+    gap: 20px;
+  }
+  @include bp('mobile') {
+    gap: 24px 14px;
+  }
+}
+
+.project__videoBlockLabel {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 160%;
+  margin-top: 25px;
+  // TODO Отступы сверху
+  @include bp('wide') {
+    font-size: 18px;
+  }
+  @include bp('notebook') {
+    font-size: 10px;
+  }
+  @include bp('tablet') {
+    font-size: 10px;
+  }
+  @include bp('mobile') {
+    font-size: 10px;
+  }
+}
+.project__videoBlockTime {
+  font-style: 14px;
+  color: rgba($color: #111111, $alpha: 0.5);
+  @include bp('wide') {
+    font-size: 18px;
+  }
+  @include bp('notebook') {
+    font-size: 13px;
+  }
+  @include bp('tablet') {
+    font-size: 13px;
+  }
+  @include bp('mobile') {
+    font-size: 13px;
+  }
+}
+.project__videoBlockInfo {
+  display: flex;
+  flex-direction: column;
+}
+.project__videoBlockButton {
+  overflow: hidden;
+  border-radius: 100%;
+  position: relative;
+  color: $color-white;
+  width: 186px;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $color-primary;
+    opacity: 0.3;
+  }
+  &:hover {
+    color: $color-white;
+    .project__videoBlockPlay {
+      transform: scale(1.1);
+    }
+  }
+  @include bp('wide') {
+    width: 241px;
+  }
+  @include bp('notebook') {
+    width: 133px;
+  }
+  @include bp('tablet') {
+    width: 133px;
+  }
+  @include bp('mobile') {
+    width: 131px;
+  }
+}
+.project__videoBlockPlay {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border: 1px solid $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 100%;
+  color: currentColor;
+  transition: all 0.2s ease;
+  svg {
+    width: 10px;
+    height: 11px;
+  }
+  @include bp('wide') {
+    svg {
+      width: 13px;
+      height: 14px;
+    }
+  }
+  @include bp('notebook') {
+    font-size: 13px;
+    svg {
+      width: 7px;
+      height: 8px;
+    }
+  }
+  @include bp('tablet') {
+    font-size: 13px;
+    svg {
+      width: 7px;
+      height: 8px;
+    }
+  }
+  @include bp('mobile') {
+    font-size: 13px;
+    svg {
+      width: 7px;
+      height: 8px;
+    }
+  }
+}
+
+.project__videoBlockLine {
+  height: 1px;
+  width: 109px;
+  background: #d7d7d7;
+  @include bp('wide') {
+    width: 140px;
+  }
+  @include bp('notebook') {
+    width: 69px;
+  }
+  @include bp('tablet') {
+    width: 69px;
+  }
+  @include bp('mobile') {
+    width: 59px;
+  }
+}

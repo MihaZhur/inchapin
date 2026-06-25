@@ -1,0 +1,65 @@
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/breakpoints' as *;
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu__burger {
+  position: relative;
+  width: 38px;
+  height: 17px;
+  color: $color-primary;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.2s;
+  }
+
+  &::before { top: 0; }
+  &::after  { bottom: 0; }
+
+  &:hover {
+    &::before { transform: translateY(-3px); }
+    &::after  { transform: translateY(3px); }
+  }
+
+  @include bp('mobile') {
+    color: $color-black;
+  }
+}
+
+.menu__line {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: translateY(-50%);
+
+  @include bp('mobile') {
+    color: $color-black;
+  }
+}
+
+.menu__label {
+  color: $color-black;
+  font-size: 13px;
+  font-weight: 600;
+
+  @include bp('mobile') {
+    display: none;
+  }
+}

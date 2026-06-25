@@ -1,13 +1,65 @@
+@use '@/shared/styles/breakpoints' as *;
 .header {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // background-color: #fff;
-    // z-index: 1000
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 29px;
+  padding-bottom: 28px;
+  @include bp('wide') {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @include bp('notebook') {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @include bp('tablet') {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @include bp('mobile') {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 .header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_call {
+  display: flex;
+  align-items: center;
+  @include bp('wide') {
+    gap: 45px;
+  }
+  @include bp('desktop') {
+    gap: 40px;
+  }
+  @include bp('notebook') {
+    gap: 35px;
+  }
+  @include bp('tablet') {
+    display: none;
+  }
+}
+.header__phone {
+  font-size:17px;
+  font-weight:600;
+}
+.header_menu {
+  display: flex;
+  @include bp('wide') {
+    gap: 43px;
+  }
+  @include bp('desktop') {
+    gap: 40px;
+  }
+  @include bp('notebook') {
+    gap: 25px;
+  }
 }

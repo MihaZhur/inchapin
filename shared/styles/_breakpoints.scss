@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:list';
+
 $breakpoints: (
   'mobile':   (0, 767px),
   'tablet':   (768px, 1023px),
@@ -7,13 +10,13 @@ $breakpoints: (
 );
 
 @mixin bp($name) {
-  $range: map-get($breakpoints, $name);
+  $range: map.get($breakpoints, $name);
 
   @if $range == null {
-    @warn "Unknown breakpoint: `#{$name}`. Available: #{map-keys($breakpoints)}";
+    @warn "Unknown breakpoint: `#{$name}`.";
   } @else {
-    $min: nth($range, 1);
-    $max: nth($range, 2);
+    $min: list.nth($range, 1);
+    $max: list.nth($range, 2);
 
     @if $min == 0 and $max != null {
       @media (max-width: $max) { @content; }

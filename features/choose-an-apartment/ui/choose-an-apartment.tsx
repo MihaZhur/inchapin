@@ -1,3 +1,4 @@
+import { Button } from '@/shared/ui/button'
 export const ChooseAnApartment = () => {
-    return <div>ChooseAnApartment</div>
+    return <Button>Выбрать квартиру</Button>
 }

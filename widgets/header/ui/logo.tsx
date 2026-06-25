@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import LogoIcon from '@/shared/assets/logo.svg'
 export const Logo = () => {
-    return <div><a href="/"><Image width={187} height={30} src="/logo.svg" alt="Inchapin" /></a></div>
+    // Лого добавил как svg чтобы качество не терялось
+    return <div><a href="/"><LogoIcon /></a></div>
 }
