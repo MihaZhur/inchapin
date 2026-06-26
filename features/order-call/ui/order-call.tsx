@@ -30,7 +30,10 @@ export const OrderCall = () => {
     return <>
         <a className={styles.phone} href="tel:+74955272121">+7 495 527 21 21</a>
         <Button variant="ghost" onClick={handleOpenModal} className={styles.button}>
-            <span className={styles.button__text}>Заказать звонок</span>
+            <span className={styles.button__text}>
+                <span className={styles.button__textMain}>Заказать звонок</span>
+                <span className={styles.button__textGhost}>Заказать звонок</span>
+            </span>
         </Button>
 
         <div className={styles.dropdown} ref={dropdownRef}>

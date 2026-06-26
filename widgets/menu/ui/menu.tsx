@@ -5,6 +5,5 @@ export const Menu = () => {
         <Button className={styles.menu__burger} variant="ghost">
             <span className={styles.menu__line} />
         </Button>
-        <span className={styles.menu__label}>МЕНЮ</span>
     </div>
 }

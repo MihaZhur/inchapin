@@ -31,7 +31,23 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 187px;
+  height: 30px;
   transform: translate(-50%, -50%);
+  @include bp('wide') {
+  }
+  @include bp('notebook') {
+    width: 156px;
+    height: 25px;
+  }
+  @include bp('tablet') {
+    width: 156px;
+    height: 25px;
+  }
+  @include bp('mobile') {
+    width: 131px;
+    height: 21px;
+  }
 }
 .header__inner {
   display: flex;

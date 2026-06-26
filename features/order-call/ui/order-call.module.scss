@@ -10,15 +10,48 @@
   @include bp('mobile') {
     display: none;
   }
+
+  &:hover .button__textMain {
+    transform: translateY(-110%);
+  }
+
+  &:hover .button__textGhost {
+    transform: translateY(0);
+  }
 }
 
 .button__text {
-  // visible on desktop/notebook/wide
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+.button__textMain {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button__textGhost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: translateY(110%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .phone {
   font-size: 17px;
   font-weight: 600;
+  transition: color 0.2s;
+  &:hover {
+    color: $color-primary;
+  }
   @include bp('tablet') {
     display: none;
   }
@@ -50,13 +83,22 @@
   background: none;
   cursor: pointer;
   color: inherit;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
   svg {
     width: 14px;
     height: 14px;
+    path {
+      fill: currentColor;
+    }
   }
   @include bp('mobile') {
     border-color: $color-primary;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: $color-white;
   }
 }
 

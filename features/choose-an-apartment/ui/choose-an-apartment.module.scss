@@ -1,0 +1,140 @@
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/breakpoints' as *;
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background-color: $color-primary;
+  color: $color-white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:hover .animatedText__main {
+    transform: translateY(-110%);
+  }
+
+  &:hover .animatedText__ghost {
+    transform: translateY(0);
+  }
+  @include bp('wide') {
+    padding: 18px 26px;
+    font-size: 14px;
+  }
+  @include bp('notebook') {
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+  @include bp('tablet') {
+    padding: 16px 18px;
+    font-size: 12px;
+  }
+}
+
+.animatedText {
+  position: relative;
+  overflow: hidden;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.animatedText__main {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.animatedText__ghost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: translateY(110%);
+  transition: transform 0.3s ease;
+}
+
+.arrow {
+  width: 13px;
+  height: auto;
+  flex-shrink: 0;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+
+  path {
+    fill: $color-white;
+  }
+}
+
+.arrow_open {
+  transform: rotate(180deg);
+}
+
+// react-select стили
+.wrapper {
+  :global(.select__menu) {
+    margin-top: 6px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: none;
+  }
+
+  :global(.select__menu-list) {
+    padding: 4px;
+  }
+
+  :global(.select__option) {
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-black;
+    cursor: pointer;
+
+    &:hover,
+    &:global(.select__option--is-focused) {
+      background-color: rgba(47, 128, 237, 0.08);
+    }
+
+    &:global(.select__option--is-selected) {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  :global(.select__control) {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent;
+    min-height: unset;
+  }
+
+  :global(.select__value-container) {
+    padding: 0;
+  }
+
+  :global(.select__single-value) {
+    margin: 0;
+    color: $color-white;
+  }
+
+  :global(.select__input-container) {
+    margin: 0;
+    padding: 0;
+  }
+}

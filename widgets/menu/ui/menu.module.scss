@@ -6,6 +6,23 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  cursor: pointer;
+
+  &::after {
+    content: 'МЕНЮ';
+    color: $color-black;
+    font-size: 13px;
+    font-weight: 600;
+
+    @include bp('mobile') {
+      display: none;
+    }
+  }
+
+  &:hover .menu__burger {
+    &::before { transform: translateY(-3px); }
+    &::after  { transform: translateY(3px); }
+  }
 }
 
 .menu__burger {
@@ -54,12 +71,3 @@
   }
 }
 
-.menu__label {
-  color: $color-black;
-  font-size: 13px;
-  font-weight: 600;
-
-  @include bp('mobile') {
-    display: none;
-  }
-}
