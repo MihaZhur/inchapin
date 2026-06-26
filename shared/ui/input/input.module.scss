@@ -1,0 +1,74 @@
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/breakpoints' as *;
+.field {
+  position: relative;
+  padding-top: 16px;
+  @include bp('wide') {
+    padding-top: 17px;
+  }
+  @include bp('notebook') {
+     padding-top: 14px;
+  }
+  @include bp('tablet') {
+    padding-top: 14px;
+  }
+  @include bp('mobile') {
+   padding-top: 11px;
+  }
+}
+
+.field__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #111;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  transform-origin: left top;
+  text-transform: uppercase;
+  @include bp('wide') {
+    font-size: 17px;
+    top: 17px;
+  }
+  @include bp('notebook') {
+    font-size: 14px;
+    top: 14px;
+  }
+  @include bp('tablet') {
+    font-size: 14px;
+    top: 14px;
+  }
+  @include bp('mobile') {
+    font-size: 11px;
+    top: 20px;
+  }
+}
+
+.field__label_lifted {
+  transform: translateY(-14px);
+  font-size: 10px;
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 8px 0;
+  font-size: 13px;
+  outline: none;
+  color: #111;
+
+  &:focus {
+    border-bottom-color: #111;
+  }
+}
+
+.field__error {
+  font-size: 12px;
+  color: red;
+}

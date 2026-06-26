@@ -13,12 +13,14 @@ export const ProjectSection = () => {
                     О проекте
                 </Typography>
                 <ProjectImage />
+                {/* Скорее всего это просто декор лого, в начале подумал что кнопка */}
                 <ButtonTop />
             </div>
             <div className={styles.project__info}>
                 <Typography className={styles.project__infoTitle} variant='body' uppercase>
                     уютное и безопасное пространство для счастливой, <span className={styles.project__infoMarker}> спокойной и размеренной жизни</span>
                 </Typography>
+                
                 <Typography className={styles.project__infoText} variant='body' uppercase>
                     <span className={styles.project__infoMarker}> Квартиры от 65 до 356 м2 с чистовой отделкой,</span> балконами, лоджиями и террасами В собственной ЗАКРЫТОЙ охраняемой территориИ.
                 </Typography>

@@ -9,6 +9,18 @@
   @include bp('mobile') {
     min-height: -webkit-fill-available;
   }
+  @include bp('wide') {
+      padding-top: 131px;
+  }
+  @include bp('notebook') {
+    padding-top: 103px;
+  }
+  @include bp('tablet') {
+    padding-top: 123px;
+  }
+  @include bp('mobile') {
+    padding-top: 81px;
+  }
 }
 .intro__botom {
   display: flex;

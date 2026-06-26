@@ -3,6 +3,9 @@
 .project {
   padding-top: 110px;
   padding-bottom: 40px;
+  @include bp('mobile') {
+    padding-bottom: 20px;
+  }
 }
 .project__container {
   display: flex;
@@ -57,13 +60,17 @@
   @include bp('notebook') {
     font-size: 11px;
     max-width: 408px;
+    // margin-left: -30px;
   }
   @include bp('tablet') {
     font-size: 11px;
     max-width: 290px;
+    margin-left: -40px;
   }
   @include bp('mobile') {
     font-size: 11px;
+    margin-left: -20px;
+    max-width: calc(100% - 20px);
   }
 }
 
@@ -108,7 +115,7 @@
       width: 35px;
       height: 6px;
     }
-    padding-top: 56px;
+    padding-top: 0;
   }
 }
 .project__infoMarker {
@@ -195,21 +202,25 @@
   padding: 0;
   border-radius: 100%;
   @include bp('wide') {
+    top: 149px;
     width: 259px;
     height: 259px;
     right: -130px;
   }
   @include bp('notebook') {
+    top: 81px;
     width: 148px;
     height: 148px;
     right: -74px;
   }
   @include bp('tablet') {
+    top: 79px;
     width: 81px;
     height: 81px;
     right: -40px;
   }
   @include bp('mobile') {
+    top: 71px;
     width: 87px;
     height: 87px;
     right: -44px;
@@ -222,16 +233,20 @@
   margin-top: 96px;
   gap: 15px;
   @include bp('wide') {
+    margin-top: 100px;
     gap: 20px;
   }
   @include bp('notebook') {
     gap: 20px;
+    margin-top: 60px;
   }
   @include bp('tablet') {
     gap: 20px;
+    margin-top: 30px;
   }
   @include bp('mobile') {
-    gap: 24px 14px;
+    gap: 0;
+    margin-top: 20px;
   }
 }
 
@@ -331,6 +346,8 @@
     height: 11px;
   }
   @include bp('wide') {
+    width: 142px;
+    height: 142px;
     svg {
       width: 13px;
       height: 14px;
@@ -338,6 +355,8 @@
   }
   @include bp('notebook') {
     font-size: 13px;
+    width: 79px;
+    height: 79px;
     svg {
       width: 7px;
       height: 8px;
@@ -345,6 +364,8 @@
   }
   @include bp('tablet') {
     font-size: 13px;
+    width: 79px;
+    height: 79px;
     svg {
       width: 7px;
       height: 8px;
@@ -352,6 +373,8 @@
   }
   @include bp('mobile') {
     font-size: 13px;
+    width: 77px;
+    height: 77px;
     svg {
       width: 7px;
       height: 8px;
