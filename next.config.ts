@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   reactCompiler: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/inchapin' : '',
+  basePath: process.env.PAGES_BASE_PATH || '',
   turbopack: {
     root: __dirname,
     rules: {
